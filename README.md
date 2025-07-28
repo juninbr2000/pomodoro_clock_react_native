@@ -2,7 +2,7 @@
 
 Pomodoro simples e funcional, desenvolvido com **React Native** e **Expo Router**, que ajuda você a manter o foco durante seus estudos ou trabalho, alternando entre ciclos de foco e pausas.
 
-<img src="https://https://github.com/juninbr2000/pomodoro_clock_react_native/main/assets/screenshot.png" alt="FocusTimer screenshot" width="300"/>
+<img src="https://github.com/juninbr2000/pomodoro_clock_react_native/main/assets/screenshot.png" alt="Tela incial Pomodoro screenshot" width="300"/>
 
 ---
 
