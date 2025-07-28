@@ -1,8 +1,8 @@
-# 🧠 FocusTimer – Pomodoro App
+# 🧠 Pomodoro App - React Native + Expo
 
-**FocusTimer** é um aplicativo Pomodoro simples e funcional, desenvolvido com **React Native** e **Expo Router**, que ajuda você a manter o foco durante seus estudos ou trabalho, alternando entre ciclos de foco e pausas.
+Pomodoro simples e funcional, desenvolvido com **React Native** e **Expo Router**, que ajuda você a manter o foco durante seus estudos ou trabalho, alternando entre ciclos de foco e pausas.
 
-<img src="https://https://github.com/juninbr2000/pomodoro_clock_react_native/blob/main/assets/screenshot.png" alt="FocusTimer screenshot" width="300"/>
+<img src="https://https://github.com/juninbr2000/pomodoro_clock_react_native/main/assets/screenshot.png" alt="FocusTimer screenshot" width="300"/>
 
 ---
 
@@ -24,7 +24,7 @@
 - [Expo](https://expo.dev/)
 - [expo-router](https://expo.github.io/router/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [React Native Vibration API](https://reactnative.dev/docs/vibration)
+- [AsyncStorage](https://react-native-async-storage.github.io/async-storage/docs/usage/)
 
 ---
 
@@ -32,7 +32,7 @@
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
+git clone https://github.com/juninbr2000/pomodoro_clock_react_native
 ```
 Instale as dependências:
 
@@ -63,13 +63,6 @@ npx expo start
 ```
 
 ---
-
-### ✅ Próximos Passos
- Adicionar sons configuráveis por sessão
-
- Salvar preferências no armazenamento local
-
- Personalizar cores
 
 🧠 Por que Pomodoro?
 A técnica Pomodoro melhora sua produtividade ao dividir o trabalho em blocos focados de tempo, seguidos por breves pausas. Ela ajuda na concentração, evita fadiga mental e melhora o controle do tempo.
