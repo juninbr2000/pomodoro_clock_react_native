@@ -1,9 +1,10 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { Text, TouchableOpacity, View, StyleSheet, Vibration, useColorScheme } from "react-native";
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import TimerSetup from "@/components/TimerSetup";
 import ProgressBarCircle from "@/components/ProgressBarCircle"; // Importe o novo componente
-import { router } from "expo-router";
+import { router, useFocusEffect } from "expo-router";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 export default function Index() {
@@ -14,6 +15,8 @@ export default function Index() {
   const [pause, setPause] = useState(true);
   const [stoped, setStoped] = useState(true)
   const [isFocus, setIsFocus] = useState(true);
+
+  const [userColor, setUserColor] = useState('#80e080')
 
   // Estados para o tempo total da sessão atual (foco ou pausa)
   const [currentSessionTotalTime, setCurrentSessionTotalTime] = useState(focusTime * 60);
@@ -55,19 +58,13 @@ export default function Index() {
         if (timeLeft <= 0) {
           clearInterval(interval);
           Vibration.vibrate(500);
-          setIsFocus(!isFocus);
-          if(isFocus){
-            setTime(focusTime)
-          } else {
-            setTime(breakTime)
-          }
+          switchSession()
         }
       }, 1000);
 
       return () => clearInterval(interval);
     }
   }, [pause, isFocus, focusTime, breakTime]);
-
 
   useEffect(() => {
     if (stoped) {
@@ -96,11 +93,42 @@ export default function Index() {
     return (elapsed / currentSessionTotalTime) * 100;
   }, [elapsed, currentSessionTotalTime]);
 
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('color');
+      if (value !== null) {
+        setUserColor(value)
+      } else {
+        setUserColor('#80e080')
+      }
+    } catch (e) {
+      console.error(e)
+    }
+  };
 
+  const switchSession = () => {
+    const newIsFocus = !isFocus;
+    setIsFocus(newIsFocus);
+
+    if (newIsFocus) {
+      setTime(focusTime);
+      setCurrentSessionTotalTime(focusTime * 60);
+    } else {
+      setTime(breakTime);
+      setCurrentSessionTotalTime(breakTime * 60);
+    }
+    setSeconds(0);
+  };
+
+  useFocusEffect(
+  useCallback(() => {
+    getData();
+  }, [])
+);
   return (
     <View style={styles.container} >
       <Text style={styles.infoText}>
-        {stoped ? "Parado" : isFocus ? "Foco" : "Pausa"}
+        {pause || stoped ? "Parado" : isFocus ? "Foco" : "Pausa"}
       </Text>
 
       {/* Círculo de Progresso */}
@@ -110,7 +138,7 @@ export default function Index() {
           radius={120}
           strokeWidth={15}
           backgroundColor={isDark ? '#555' : '#ccc'}
-          foregroundColor={isDark ? '#80e080' : '#4caf50'}
+          foregroundColor={userColor}
         />
         {/* Tempo */}
         <Text style={styles.timer}>
@@ -162,7 +190,9 @@ function getStyle(isDark: boolean) {
       infoText: {
         color: isDark ? '#fff' : "#000",
         fontSize: 16,
-        marginBottom: 20, // Espaço entre o texto de info e o timer
+        marginBottom: 20,
+        fontWeight: 'bold',
+        fontStyle: 'italic',
       },
       circleContainer: {
         position: 'relative', // Para posicionar o texto sobre o círculo

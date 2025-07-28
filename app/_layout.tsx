@@ -21,7 +21,7 @@ export default function RootLayout() {
           headerTitleStyle: {
             color: isDark ? "#fff" : "#000",
           },
-          headerTintColor: isDark ? "#fff" : "#000", // Cor do botão de voltar
+          headerTintColor: isDark ? "#fff" : "#000", 
         }}
       />
     </Stack>

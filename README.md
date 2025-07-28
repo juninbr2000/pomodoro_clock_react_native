@@ -1,50 +1,71 @@
-# Welcome to your Expo app 👋
+# 🧠 FocusTimer – Pomodoro App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**FocusTimer** é um aplicativo Pomodoro simples e funcional, desenvolvido com **React Native** e **Expo Router**, que ajuda você a manter o foco durante seus estudos ou trabalho, alternando entre ciclos de foco e pausas.
 
-## Get started
+<img src="https://github.com/juninbr2000/pomodoro_clock_react_native/assets/screenshot.png" alt="FocusTimer screenshot" width="300"/>
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🚀 Recursos
 
-2. Start the app
+- ⏱️ Timer com controle de Foco e Pausa
+- 🌗 Suporte a tema escuro/claro automático
+- 🎨 Personalização do tempo de foco e pausa
+- 🔔 Vibração ao fim de cada ciclo
+- 🔄 Círculo de progresso animado
+- 🖌️ Tela de customização (em desenvolvimento)
+- 🧭 Navegação com `expo-router`
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🧑‍💻 Tecnologias Utilizadas
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [expo-router](https://expo.github.io/router/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Native Vibration API](https://reactnative.dev/docs/vibration)
+- [Hooks personalizados](https://reactjs.org/docs/hooks-intro.html)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📦 Instalação
 
-When you're ready, run:
-
+1. Clone o repositório:
 ```bash
-npm run reset-project
-```
+git clone https://github.com/seu-usuario/seu-repo.git
+Instale as dependências:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+bash
+Copiar
+Editar
+cd seu-repo
+npm install
+Rode com Expo:
 
-## Learn more
+bash
+Copiar
+Editar
+npx expo start
+📁 Estrutura de Pastas
+bash
+Copiar
+Editar
+.
+├── app/
+│   ├── index.tsx               # Tela principal do timer
+│   └── Customization.tsx       # Tela de personalização
+├── components/
+│   ├── TimerSetup.tsx          # Componente para definir tempos
+│   └── ProgressBarCircle.tsx   # Componente de progresso circular
+├── assets/                     # Imagens e ícones
+└── README.md
+✅ Próximos Passos
+ Adicionar sons configuráveis por sessão
 
-To learn more about developing your project with Expo, look at the following resources:
+ Salvar preferências no armazenamento local
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+ Personalizar cores
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+🧠 Por que Pomodoro?
+A técnica Pomodoro melhora sua produtividade ao dividir o trabalho em blocos focados de tempo, seguidos por breves pausas. Ela ajuda na concentração, evita fadiga mental e melhora o controle do tempo.
