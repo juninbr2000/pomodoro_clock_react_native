@@ -2,7 +2,7 @@
 
 **FocusTimer** é um aplicativo Pomodoro simples e funcional, desenvolvido com **React Native** e **Expo Router**, que ajuda você a manter o foco durante seus estudos ou trabalho, alternando entre ciclos de foco e pausas.
 
-<img src="https://github.com/juninbr2000/pomodoro_clock_react_native/assets/screenshot.png" alt="FocusTimer screenshot" width="300"/>
+<img src="https://https://github.com/juninbr2000/pomodoro_clock_react_native/blob/main/assets/screenshot.png" alt="FocusTimer screenshot" width="300"/>
 
 ---
 
@@ -13,7 +13,7 @@
 - 🎨 Personalização do tempo de foco e pausa
 - 🔔 Vibração ao fim de cada ciclo
 - 🔄 Círculo de progresso animado
-- 🖌️ Tela de customização (em desenvolvimento)
+- 🖌️ Tela de customização
 - 🧭 Navegação com `expo-router`
 
 ---
@@ -25,7 +25,6 @@
 - [expo-router](https://expo.github.io/router/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [React Native Vibration API](https://reactnative.dev/docs/vibration)
-- [Hooks personalizados](https://reactjs.org/docs/hooks-intro.html)
 
 ---
 
@@ -34,23 +33,24 @@
 1. Clone o repositório:
 ```bash
 git clone https://github.com/seu-usuario/seu-repo.git
+```
 Instale as dependências:
 
-bash
-Copiar
-Editar
+```bash
 cd seu-repo
 npm install
+```
+
 Rode com Expo:
 
-bash
-Copiar
-Editar
+```bash
 npx expo start
-📁 Estrutura de Pastas
-bash
-Copiar
-Editar
+```
+
+---
+
+## 📁 Estrutura de Pastas
+```bash
 .
 ├── app/
 │   ├── index.tsx               # Tela principal do timer
@@ -60,7 +60,11 @@ Editar
 │   └── ProgressBarCircle.tsx   # Componente de progresso circular
 ├── assets/                     # Imagens e ícones
 └── README.md
-✅ Próximos Passos
+```
+
+---
+
+### ✅ Próximos Passos
  Adicionar sons configuráveis por sessão
 
  Salvar preferências no armazenamento local
