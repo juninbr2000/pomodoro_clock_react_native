@@ -5,7 +5,8 @@ import TimerSetup from "@/components/TimerSetup";
 import ProgressBarCircle from "@/components/ProgressBarCircle"; // Importe o novo componente
 import { router, useFocusEffect } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
+import 'expo-dev-client'
+import { useKeepAwake } from 'expo-keep-awake';
 
 export default function Index() {
   const [time, setTime] = useState(0);
@@ -125,6 +126,7 @@ export default function Index() {
     getData();
   }, [])
 );
+ useKeepAwake();
   return (
     <View style={styles.container} >
       <Text style={styles.infoText}>
@@ -169,7 +171,7 @@ export default function Index() {
         </TouchableOpacity>
       </View>
 
-      {/* Ícone de som (visual apenas) */}
+      
       <TouchableOpacity style={styles.soundIcon} onPress={() => router.push('/Customization')}>
         <FontAwesome6 name="paintbrush" size={24} color={isDark ? '#fefefe' : "black"} />
       </TouchableOpacity >

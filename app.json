@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "pomodoroClock",
+    "name": "Relogio pomodoro",
     "slug": "pomodoroClock",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.edsondev.pomodoroClock"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +38,15 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "30bc4331-534a-4668-8142-bf11e9c6e52d"
+      }
     }
+  },
+  "react-native-google-mobile-ads": {
+    "android_app_id": "ca-app-pub-2167342388104312~1485898447"
   }
 }
